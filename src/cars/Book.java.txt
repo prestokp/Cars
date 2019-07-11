@@ -1,0 +1,69 @@
+package book;
+
+public class Book{
+    
+    //Book class will have the book instance data
+    //Copyright Year, Author Name, Title Name, etc
+
+    private String authorName; //Name of the author
+    private String bookTitle;  //Name of the book
+    private int year;          //Copyright year of the book
+
+    //Constructor object
+    public Book(String authorName, String bookTitle, int year){
+                                 //Our parameter list consistes of the instance variables we
+        this.authorName = authorName;  //this variable shadows the instance variable 'authorName', take parameter 'authorName' and assign this to instance
+                                 //variable 'authorName'
+                                 // this.authorName refers to instance variable authorName
+        this.bookTitle = bookTitle;
+        this.year = year;
+
+    }
+
+    //Getters and setters
+    //This can be set using the right click, Generator, and then it automatically generates the getter and setter function
+    //based off of the instance variables that are defined
+
+    public String getauthorName() {
+        return authorName;
+    }
+
+    public void setauthorName(String authorName) {
+        this.authorName = authorName;
+    }
+
+    public String getbookTitle() {
+        return model;
+    }
+
+    public void setbookTitle(String bookTitle) {
+        this.bookTitle = bookTitle;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    //Conditional method that will determine if the car is antique or not
+    public boolean isAntique(){
+        int currentYear = LocalDate.now().getYear();
+        /*
+        if (currentYear - year > 45)
+            return true;
+        else
+            return false;
+        */
+        return currentYear - year > 45; //If it's greater than 45 then it will return true, if not it returns false
+    }
+
+    @Override
+    public String toString() {
+        return year + " " + make + " " + model;
+    }
+
+}
+}
